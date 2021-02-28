@@ -1,0 +1,19 @@
+/**index.wxss**/
+.topImg{
+  position: relative;
+  height:670rpx;
+}
+.homeImg{
+  width: 100%;
+  height:500rpx;
+}
+.showNum{
+  width: 90%;
+  height: 280rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 2rpx 10rpx 0rpx #C8D5E7;
+  margin-left: 5%;
+  top:360rpx;
+  position: absolute;
+}

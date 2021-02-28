@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view>
+    <view class="topImg">
+      <image src="../../assets/images/homebg.png" class="homeImg"></image>
+      <view class="showNum">
+        <text>剩余房间数{{num}}</text>
+      </view>
+    </view>
+    <button bindtap="go" data-index="1">入住办理</button>
+</view>
