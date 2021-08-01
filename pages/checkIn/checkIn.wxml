@@ -1,2 +1,12 @@
 <!--pages/checkIn/checkIn.wxml-->
-<text>入住办理</text>
+<view class="checkin">
+  <view class="lodger">
+    <view>
+      <label>住客姓名</label>
+      <input placeholder="请输入住客姓名" />
+    </view>
+  </view>
+  <view class="btn-box">
+    <button class="btn">订单查询</button>
+  </view>
+</view>

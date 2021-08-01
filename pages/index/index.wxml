@@ -1,10 +1,96 @@
 <!--index.wxml-->
-<view>
-    <view class="topImg">
-      <image src="../../assets/images/homebg.png" class="homeImg"></image>
-      <view class="showNum">
-        <text>剩余房间数{{num}}</text>
+<view class="container">
+  <view class="header">
+    <image src="../../assets/images/bgc.png" class="h-img"></image>
+    <view class="hotel-box">
+      <view class="hotel-info">
+        <image src="../../assets/images/hotel.png" class="hotel-icon"></image>
+        <view class="info-base">
+          <view class="name">泛在电力物联网</view>
+          <view class="address">杭州市拱墅区湖州街67号</view>
+        </view>
+      </view>
+      <view class="hotel-rooms">
+        <view class="room-surplus">
+          剩余房间
+          <text class="num">{{num}}</text>
+        </view>
       </view>
     </view>
-    <button bindtap="go" data-index="1">入住办理</button>
+  </view>
+  <view class="main">
+    <view class="service">
+      <image class="opr-img" bindtap="skipPage" data-index="2" src="../../assets/images/book-in.png"></image>
+      <image class="opr-img" bindtap="skipPage" data-index="1" src="../../assets/images/check-in.png"></image>
+    </view>
+    <!-- 订单列表 -->
+    <view class="order-con">
+      <text class="my-order">我的订单</text>
+      <view wx:if="{{initLogin}}" class="plogin">
+        请先登录
+      </view>
+      <view wx:if="{{!initLogin && (orderList.length==0|| !orderList) }}" class="plogin">
+        暂无数据
+      </view>
+      <view class="order" wx:for="{{orderList}}" wx:key="index" wx:if="{{!initLogin && orderList.length>0 }}">
+        <!-- 上 -->
+        <view class="order-top">
+          <view class="hotel-name">泛在电力物联网</view>
+          <view class="hotel-pos">
+            <image class="icon" src="../../assets/images/pos.png"></image>
+            拱墅区湖州街67号
+          </view>
+          <view class="in-info">
+            <view class="">
+              <image class="icon" src="../../assets/images/in.png"></image>
+              <text class="grey">入住</text>
+              <text class="date">{{item.contract.reserveStartDate }}</text>
+            </view>
+            <view>
+              <image class="icon" src="../../assets/images/leave.png"></image>
+              <text class="grey">离开</text>
+              <text class="date">{{item.contract.reserveEndDate}}</text>
+            </view>
+            <view style="width:90rpx">
+              <text>共{{item.contract.totalDays}}天</text>
+            </view>
+
+
+          </view>
+          <view wx:if="{{item.contract.contractState=='5'}}" class="status2">已取消</view>
+          <view wx:if="{{item.contract.contractState=='2'||item.contract.contractState=='3'}}" class="status rz" data-order="{{item}}" bindtap="skipCheckIn">入住</view>
+          <view wx:if="{{item.contract.contractState=='2'||item.contract.contractState=='3'}}" class="status" data-order="{{item}}" bindtap="cancelsCheckIn">取消入住</view>
+          <view wx:if="{{item.contract.contractState==='1'}}" class="status back" data-order="{{item}}" bindtap="backRoomHandle">退房</view>
+        </view>
+        <!-- 下 -->
+        <view class="order-bottom">
+          <!-- 入住状态 -->
+          <view class="pub-box" wx:if="{{item.contract.contractState!=='1'}}">
+            <view>
+              <label class="light-gray">押金：</label>
+              <text class="red-text">￥{{item.contract.deposit}}</text>
+            </view>
+            <view>
+              <label class="light-gray">房费：</label>
+              <text class="red-text">￥{{item.contract.paid}}</text>
+            </view>
+          </view>
+          <!-- 可退房状态 -->
+          <view class="pub-box" wx:if="{{item.contract.contractState==='1'}}">
+            <view>
+              <label class="light-gray">房间：</label>
+              <text class="bule-text">{{item.roomDto.roomName}}</text>
+            </view>
+            <view wx:if="{{item.contract.contractState==='1'}}">
+              <label class="light-gray">密码：</label>
+              <text class="bule-text">652356</text>
+              <image class="pwds-icon" src="../../assets/images/pwds.png"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>
+<!-- <import src="index.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}"/> -->

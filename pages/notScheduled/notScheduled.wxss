@@ -1,0 +1,12 @@
+/* pages/notScheduled/notScheduled.wxss */
+.not-scheduled {
+  text-align: center;
+}
+.nbook {
+  width: 310rpx;
+  height: 316rpx;
+  margin: 150rpx auto;
+}
+.not-scheduled text {
+  font-size: 30rpx;
+}

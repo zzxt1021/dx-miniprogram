@@ -1,4 +1,5 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText":"泛在电力物联网UEIOTS系统"
+  "navigationBarTitleText":"泛在电力物联网UEIOTS系统",
+  "backgroundColor":"#fff"
 }

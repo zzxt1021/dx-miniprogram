@@ -1,0 +1,7 @@
+<!--pages/notScheduled/notScheduled.wxml-->
+<view class="not-scheduled">
+  <view>
+    <image class="nbook" src="../../assets/images/nbook.png"></image>
+  </view>
+  <text>您还没有预定房间</text>
+</view>

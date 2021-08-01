@@ -1,0 +1,30 @@
+<!--pages/userBind/userBind.wxml-->
+<!-- 用户绑定 -->
+<view class="checkin">
+  <view class="lodger">  
+    <view>
+      <label><text class="required">*</text>姓名</label>
+      <input value="{{name}}" bindinput="bindName" placeholder="请输入姓名" />
+    </view>
+    <view>
+      <label><text class="required">*</text>性别</label>
+      <picker bindchange="bindPickerChange" placeholder="请选择性别" model:value="{{index}}" range="{{gender}}">
+        <view class="picker">
+          {{gender[index]}}
+        </view>
+      </picker>
+      <image class="right-arrow" src="../../assets/images/right-arrow.png"></image>
+    </view>
+    <view>
+      <label><text class="required">*</text>身份证号</label>
+      <input value="{{idCard}}" bindinput="bindIdCard" placeholder="请输入身份证号码" />
+    </view>
+    <view class="last">
+      <label><text class="required">*</text>联系手机</label>
+      <input value="{{phone}}" bindinput="bindPhone" placeholder="请输入手机号码" />
+    </view>
+  </view>
+  <view class="btn-box">
+    <button class="btn" bindtap="userBindHandle">绑定</button>
+  </view>
+</view>

@@ -1,0 +1,31 @@
+<!--pages/person/person.wxml-->
+<view class="person-">
+  <!-- 头像区 -->
+  <view class="head">
+    <view class="head-img"></view>
+    <text wx:if="{{phone}}">{{name}}</text>
+    <text wx:else bindtap="logon">立即登录</text>
+  </view>
+  <!-- 个人信息区 -->
+  <view class="person-info" wx:if="{{phone}}" >
+    <view class="info">
+      <label>姓名</label>
+      <view bindtap="bindPersonInfo" data-type="name">
+        <text>{{name}}</text>
+        <image class="right-arrow" src="../../assets/images/right-arrow.png"></image>
+      </view>
+    </view>
+    <view class="info last">
+      <label>手机号</label>
+      <view bindtap="bindPersonInfo" data-type="phone">
+        <text>{{phone}}</text>
+        <image class="right-arrow" src="../../assets/images/right-arrow.png"></image>
+      </view>
+    </view>
+  </view>
+  <modal hidden="{{hiddenModal}}" title="编辑个人信息" confirm-text="提交" cancel-text="取消" bindcancel="cancelM" bindconfirm="confirmM">
+    <input wx:if="{{curEditType==='name'}}" value="{{name}}" bindconfirm='inputChange' auto-focus/>
+    <input wx:if="{{curEditType==='id'}}" value="{{idCard}}" bindconfirm='inputChange' auto-focus />
+    <input wx:if="{{curEditType==='phone'}}" value="{{phone}}" bindconfirm='inputChange' auto-focus />
+  </modal>
+</view>

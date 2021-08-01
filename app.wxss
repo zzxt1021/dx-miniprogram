@@ -1,1 +1,7 @@
 /**app.wxss**/
+page {
+  font-size: 31rpx;
+  color: #333;
+  font-family: PingFangSC-Bold;
+  background-color: #FAFAFC;
+}

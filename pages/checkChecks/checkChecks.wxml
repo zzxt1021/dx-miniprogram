@@ -1,0 +1,37 @@
+<!--pages/checkChecks/checkChecks.wxml-->
+<view class="checkin">
+  <text class="tip-text">您已预订房间，请确认入住信息</text>
+  <view class="lodger">
+    <view>
+      {{orderInfo.contract.reserveStartDate}}  <text class="until">至</text>  {{orderInfo.contract.reserveEndDate}} 
+    </view>
+    <view>
+      <label>住客姓名</label>
+      <text>{{consumerInfo.consumerName}}</text>
+    </view>
+    <view>
+      <label>性别</label>
+      <text>{{consumerInfo.consumerSex}}</text>
+    </view>
+    <view>
+      <label>联系手机</label>
+      <text>{{consumerInfo.consumerTel}}</text>
+    </view>
+    <view>
+      <label>房费</label>
+      <text>{{orderInfo.contract.paid}}</text>
+    </view>
+    <view>
+      <label>押金</label>
+      <text>{{orderInfo.contract.deposit}}</text>
+    </view>
+    <view class="last mark">
+      <label>备注</label>
+      <text class="remark">{{orderInfo.contract.remark}}</text>
+    </view>
+  </view>
+  <view class="btn-box">
+    <text class="sum">￥{{totalMoney}}</text>
+    <button class="btn-right" bindtap="payOrder">支付订单</button>
+  </view>
+</view>

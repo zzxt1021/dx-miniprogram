@@ -1,0 +1,95 @@
+/* pages/checkChecks/checkChecks.wxss */
+.checkin {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.lodger {
+  border-top: 2rpx solid #ddd;
+  border-bottom: 2rpx solid #ddd;
+  background-color: #fff;
+  padding-left: 26rpx;
+  height: calc(100% - 180rpx);
+  overflow-y: auto;
+  position: absolute;
+  width: 100%;
+}
+.lodger .item {
+  display: flex;
+  height: 106rpx;
+  line-height: 106rpx;
+  border-bottom: 2rpx solid #ddd;
+}
+.lodger .last {
+  border-bottom: none;
+}
+
+.lodger .item label {
+  width: 220rpx;
+}
+.item .date-box {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 220rpx);
+}
+.item .date {
+  width: 48%;
+  display: flex;
+  position: relative;
+}
+.date picker {
+  width: 100%;
+}
+.date picker .picker-date{
+  width: 100%;
+  height: 106rpx;
+}
+
+.lodger .item input {
+  height: 106rpx;
+  line-height: 106rpx;
+}
+.lodger .item .right-arrow {
+  position: absolute;
+  right: 26rpx;
+  top: 40rpx;
+  width: 15rpx;
+  height: 30rpx;
+}
+.lodger .text input {
+  width: calc(100% - 220rpx);
+  padding-right: 30rpx;
+}
+
+.btn-box {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 144rpx;
+  background-color: #fff;
+  border-top: 2rpx solid #ddd;
+}
+
+.btn-box .btn {
+  width: 80%;
+  margin-top: 30rpx;
+  background-color: #427FDA;
+  color: #fff;
+  font-weight: normal;
+}
+.bfgp{
+  display: flex;
+  margin-right: 20rpx;
+}
+radio .wx-radio-input{
+  border-radius: 50%;/* 圆角 */
+  width: 30rpx; /* 背景的宽 */
+  height: 30rpx; /* 背景的高 */
+}
+radio .wx-radio-input.wx-radio-input-checked{
+  border: none;
+  background: #427FDA;
+}

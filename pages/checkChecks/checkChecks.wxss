@@ -1,0 +1,82 @@
+/* pages/checkChecks/checkChecks.wxss */
+.checkin {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.tip-text {
+  margin-top: 40rpx;
+  margin-bottom: 10rpx;
+  padding-left: 26rpx;
+  color: #666;
+  font-size: 24rpx;
+}
+.lodger {
+  border-top: 2rpx solid #ddd;
+  border-bottom: 2rpx solid #ddd;
+  background-color: #fff;
+  padding-left: 26rpx;
+}
+.lodger view {
+  display: flex;
+  height: 106rpx;
+  line-height: 106rpx;
+  border-bottom: 2rpx solid #ddd;
+}
+.until {
+  margin: 0 40rpx;
+}
+.weekday {
+  font-size: 26rpx;
+  color: #999;
+  margin-left: 20rpx;
+}
+.lodger .last {
+  border-bottom: none;
+}
+
+.lodger view label {
+  width: 220rpx;
+}
+.lodger view text {
+  color: #666;
+}
+.lodger .mark {
+  height: auto;
+  line-height: 60rpx;
+  padding: 15rpx 0;
+}
+.remark {
+  height: auto;
+  width: calc(100% - 220rpx);
+  padding-right: 30rpx;
+  color: #666;
+}
+
+.btn-box {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 144rpx;
+  background-color: #fff;
+  border-top: 2rpx solid #ddd;
+  padding: 0 26rpx;
+  line-height: 144rpx;
+  box-sizing: border-box;
+}
+.btn-box .sum {
+  color: #427FDA;
+  font-size: 36rpx;
+}
+.btn-box .btn-right {
+  float: right;
+  width: 50%;
+  margin-top: 30rpx;
+  font-size: 31rpx;
+  background-color: #427FDA;
+  color: #fff;
+  font-weight: normal;
+}

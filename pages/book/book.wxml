@@ -1,0 +1,107 @@
+<!--pages/book/book.wxml-->
+<view class="checkin">
+  <view class="lodger">
+    <view class="item">
+      <label>入住时间</label>
+      <view class="date-box">
+        <view class="date">
+          <picker mode="date" bindchange="bindCheckInDateChange" value="{{checkInDate}}" start="{{nowDate}}">
+            <view class="picker-date">
+              {{checkInDate}}
+            </view>
+            <image class="right-arrow" src="../../assets/images/right-arrow.png"></image>
+          </picker>
+        </view>
+        <view class="date">
+          <picker mode="time" value="{{checkInTime}}" start="00:00:00" end="15:00:00"
+            bindchange="bindCheckInTimeChange">
+            <view class="picker-date">
+              {{checkInTime}}
+            </view>
+            <image class="right-arrow" src="../../assets/images/right-arrow.png"></image>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view class="item">
+      <label>离开时间</label>
+      <view class="date-box">
+        <view class="date">
+          <picker mode="date" value="{{leaveDate}}" start="{{nowDate}}" bindchange="bindLeaveDateChange">
+            <view class="picker-date">
+              {{leaveDate}}
+            </view>
+            <image class="right-arrow" src="../../assets/images/right-arrow.png"></image>
+          </picker>
+        </view>
+        <view class="date date-time">
+          <picker mode="time" value="{{leaveTime}}" start="00:00" end="15:00" bindchange="bindLeaveTimeChange">
+            <view class="picker-date">
+              {{leaveTime}}
+            </view>
+            <image class="right-arrow" src="../../assets/images/right-arrow.png"></image>
+          </picker>
+        </view>
+      </view>
+
+    </view>
+    <view class="item">
+      <label>住客姓名</label>
+      <input value="{{name}}" disabled="true" />
+    </view>
+    <view class="item">
+      <label>性别</label>
+      <picker bindchange="bindPickerChange" disabled="true" value="{{index}}" range="{{gender}}">
+        <view class="picker">
+          {{gender[index]}}
+        </view>
+      </picker>
+      <!-- <image class="right-arrow" src="../../assets/images/right-arrow.png"></image> -->
+    </view>
+    <view class="item">
+      <label>预留手机</label>
+      <input value="{{phone}}" disabled="true" />
+    </view>
+    <view class="item">
+      <label>房间类型</label>
+      <radio-group bindchange="rtypeChange" style="display:flex">
+        <view class="bfgp" wx:for="{{roomList}}" wx:key="{{item.code}}">
+          <view style="margin-right:10rpx">
+            <radio value="{{item.code}}" checked="true"/>
+          </view>
+          <view>{{item.name}}</view>
+        </view>
+      </radio-group>
+    </view>
+    <view class="item" wx:if="{{roomType=='20-01'}}">
+      <label>包房</label>
+      <radio-group bindchange="radioChange" style="display:flex">
+        <view class="bfgp" wx:for="{{bfitems}}" wx:key="{{item.value}}">
+          <view style="margin-right:10rpx">
+            <radio value="{{item.value}}" checked="true"/>
+          </view>
+          <view>{{item.name}}</view>
+        </view>
+      </radio-group>
+    </view>
+    <view class="item">
+      <label>团队名称</label>
+      <input value="{{publicName}}" bindinput="bindPublice"/>
+    </view>
+    <view class="item">
+      <label>房费(元)</label>
+      <input value="{{paid}}" disabled="true"/>
+    </view>
+    <view class="item">
+      <label>押金(元)</label>
+      <input value="{{deposit}}" disabled="true"/>
+    </view>
+    <view class="item text last">
+      <label>备注</label>
+      <input value="{{remark}}" bindinput="bindRemark" placeholder="请输入备注信息" />
+    </view>
+  </view>
+  <view class="btn-box">
+    <button class="btn" bindtap="subscribeHandle">登记</button>
+  </view>
+</view>

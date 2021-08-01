@@ -1,0 +1,53 @@
+/* pages/person/person.wxss */
+.person- {
+  width: 100%;
+  box-sizing: border-box;
+}
+.head {
+  width: 100%;
+  height: 300rpx;
+  background-color: #fff;
+  display: flex;
+  padding-left: 48rpx;
+  line-height: 300rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.head-img {
+  width: 133rpx;
+  height: 133rpx;
+  border-radius: 50%;
+  background-color: #6BA7F0;
+  margin-top: 83.5rpx;
+  margin-right: 30rpx;
+}
+
+.person-info {
+  width: 100%;
+  margin-top: 15rpx;
+  background-color: #fff;
+}
+
+.person-info {
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+.person-info .info {
+  display: flex;
+  justify-content: space-between;
+  height: 106rpx;
+  line-height: 106rpx;
+  border-bottom: 2rpx solid #ddd;
+  padding-right: 60rpx;
+  position: relative;
+}
+.person-info .last {
+  border-bottom: none;
+}
+.right-arrow {
+  position: absolute;
+  right: 30rpx;
+  top: 38rpx;
+  width: 15rpx;
+  height: 30rpx;
+}
